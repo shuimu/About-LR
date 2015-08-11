@@ -21,24 +21,41 @@
     <section class="main-content">
       <p>关于LR（线性回归），有蛮多自己的思考的，现在一一记录下来，作为感悟。</p>
 
-<p>线性回归简单看来，就是最小化损失函数。损失函数可以有很多的形式，比如：Loss = sum[ (f(xi) - y)^2 for i in (1, n) ] 这样的形式是符合最大似然的形式。
-假设f(xi) = wx+b的形式，即线性的形式，那么 Loss = sum[ (wx+b-y)^2 for i in (1, n) ]，如果采用sgd的优化方法，对其求偏导得到：
-对w求偏导：Loss'w = (wx+b-y)x
-对b求偏导：Loss'b = (wx+b-y)
-那么得到更新公式：
-w' = w + Loss'w<em>alpha
-b' = b + Loss'b</em>alpha
-其中，alpha是学习率，公式化简即：
-w' = w + (wx+b-y)x<em>alpha
-b' = b + (wx+b-y)</em>alpha
-考虑多个feature的情况，就是：
-w1' = w1 + (wx+b-y)x1<em>alpha
-w2' = w2 + (wx+b-y)x2</em>alpha
-...
-wn' = wn + (wn+b-y)xn<em>alpha
-其中，b'可以看做xi=1的情况。
-考虑成为向量的情况，
-w = w + (wx+b-y)</em>x*alpha</p>
+<p>线性回归简单看来，就是最小化损失函数。损失函数可以有很多的形式，比如：Loss = sum[ (f(xi) - y)^2 for i in (1, n) ] 这样的形式是符合最大似然的形式。</p>
+
+<p>假设f(xi) = wx+b的形式，即线性的形式，那么 Loss = sum[ (wx+b-y)^2 for i in (1, n) ]，如果采用sgd的优化方法，对其求偏导得到：</p>
+
+<p>对w求偏导：Loss'w = (wx+b-y)x</p>
+
+<p>对b求偏导：Loss'b = (wx+b-y)</p>
+
+<p>那么得到更新公式：</p>
+
+<p>w' = w + Loss'w*alpha</p>
+
+<p>b' = b + Loss'b*alpha</p>
+
+<p>其中，alpha是学习率，公式化简即：</p>
+
+<p>w' = w + (wx+b-y)x*alpha</p>
+
+<p>b' = b + (wx+b-y)*alpha</p>
+
+<p>考虑多个feature的情况，就是：</p>
+
+<p>w1' = w1 + (wx+b-y)x1*alpha</p>
+
+<p>w2' = w2 + (wx+b-y)x2*alpha</p>
+
+<p>...</p>
+
+<p>wn' = wn + (wn+b-y)xn*alpha</p>
+
+<p>其中，b'可以看做xi=1的情况。</p>
+
+<p>考虑成为向量的情况，</p>
+
+<p>w = w + (wx+b-y)<em>x</em>alpha</p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/shuimu/About-LR">About Linear Regression</a> is maintained by <a href="https://github.com/shuimu">shuimu</a>.</span>
